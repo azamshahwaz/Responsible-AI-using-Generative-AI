@@ -1,227 +1,126 @@
 # 🤖 Responsible AI Pipeline
 
-> 🚀 An end-to-end **Responsible AI, Machine Learning & Generative AI pipeline** for evaluating data quality, detecting bias, improving fairness, training ML models, generating explainability insights, calculating Responsible AI metrics, and producing automated reports.
+> 🚀 An end-to-end **Responsible AI, Machine Learning & Generative AI framework** for evaluating tabular datasets, detecting bias, improving fairness, training ML models, generating explainability insights, and producing automated governance reports.
 
 ---
 
 ## 🌟 Overview
 
-The **Responsible AI Pipeline** is a Python-based framework designed to evaluate and improve the reliability, fairness, transparency, and governance of machine-learning workflows.
+The **Responsible AI Pipeline** provides an automated workflow for analyzing machine-learning systems from multiple Responsible AI perspectives, including:
 
-The pipeline takes a tabular dataset and processes it through multiple stages including:
+* 📊 Data quality
+* ⚖️ Fairness and bias
+* 🤖 Model performance
+* 🔎 Explainability
+* ⚠️ Ethical risk
+* 🏛️ AI governance
 
-* 📂 Dataset loading and validation
-* 🧹 Data cleaning and preprocessing
-* ⚖️ Class imbalance detection
-* 🔄 SMOTE-based balancing
-* 🧬 CTGAN synthetic data generation
-* 🔍 Bias and fairness analysis
-* 🛠️ Fairness improvement
-* 🤖 Machine learning model training
-* 📊 Model evaluation
-* 🔎 Explainability analysis
-* 📈 Responsible AI metrics
-* 🧠 LLM-powered analysis and recommendations
-* 📄 Automated PDF report generation
+The pipeline combines traditional machine learning, synthetic data generation, fairness analysis, explainable AI, and an LLM-powered decision engine into a single workflow.
 
-### 🔄 Complete Pipeline
+### 🔄 High-Level Architecture
 
 ```text
-📂 CSV Dataset
-      ↓
-🔍 Dataset Loading & Validation
-      ↓
-🧹 Data Cleaning & Preprocessing
-      ↓
-⚖️ Imbalance Detection
-      ↓
-🔄 SMOTE Balancing
-      ↓
-🧬 CTGAN Synthetic Data Generation
-      ↓
-🔍 Bias & Fairness Analysis
-      ↓
-🛠️ Fairness / Bias Mitigation
-      ↓
-🤖 Model Training
-      ↓
-📊 Model Evaluation
-      ↓
+📂 Input Dataset
+      │
+      ▼
+🔍 Validation & Analysis
+      │
+      ▼
+🧹 Preprocessing
+      │
+      ▼
+⚖️ Imbalance & Bias Analysis
+      │
+      ├──────────────► 🔄 SMOTE / SMOTENC
+      │
+      ├──────────────► 🧬 CTGAN
+      │
+      ▼
+🛠️ Fairness Mitigation
+      │
+      ▼
+🤖 Model Training & Evaluation
+      │
+      ▼
 📈 Responsible AI Metrics
-      ↓
+      │
+      ▼
 🧠 LLM Decision Engine
-      ↓
-💡 AI Recommendations
-      ↓
-📊 Visualizations
-      ↓
-📄 Final Responsible AI Report
+      │
+      ▼
+💡 Recommendations & Optimization
+      │
+      ▼
+📊 Visualizations + 📄 PDF Report
 ```
 
 ---
 
-# ✨ Key Features
+# ✨ Features
 
-### 📂 Dataset Processing
-
-* Upload and process CSV datasets
-* Automatic dataset validation
-* Dataset statistics and summaries
-* Missing-value detection
-* Duplicate detection
-* Categorical feature detection
-* Automatic target-column detection
-* Classification and regression task detection
-
-### 🧹 Data Preprocessing
-
-* Missing-value handling
-* Duplicate removal
-* Categorical encoding
-* Numerical preprocessing
-* Outlier handling
-* Skewness correction
-* Feature preprocessing
-
-### ⚖️ Class Imbalance Handling
-
-* Automatic imbalance detection
-* Class distribution analysis
-* SMOTE-based balancing
-* SMOTENC support for categorical features
-* Before/after imbalance visualization
-
-### 🧬 Synthetic Data Generation
-
-* CTGAN-based tabular data generation
-* Synthetic dataset creation
-* Real vs synthetic data comparison
-* Synthetic data visualization
-
-### 🔍 Bias & Fairness
-
-* Bias detection
-* Fairness analysis
-* Protected attribute analysis
-* Proxy bias detection
-* Fairness comparison before and after mitigation
-* Bias visualization
-* Fairness improvement workflow
-
-### 🤖 Machine Learning
-
-Supported model families include:
-
-* 🌲 Random Forest
-* 📈 Gradient Boosting
-* 🗳️ Voting-based models
-
-The pipeline supports:
-
-* Classification
-* Regression
-* Model evaluation
-* Feature importance analysis
-* Model saving
-
-### 🔎 Explainable AI
-
-The pipeline provides explainability-related analysis using:
-
-* SHAP
-* LIME
-* Feature importance
-* LLM-generated explanations
-
-### 🧠 Generative AI
-
-The project integrates an LLM-powered decision engine for:
-
-* Dataset analysis
-* Bias analysis
-* Fairness interpretation
-* Risk assessment
-* Model analysis
-* Responsible AI recommendations
-* Optimization recommendations
-
-### 📊 Responsible AI Metrics
-
-The pipeline calculates multiple Responsible AI metrics:
-
-| Metric                  | Description                           |
-| ----------------------- | ------------------------------------- |
-| 📊 EDQS                 | Ethical Data Quality Score            |
-| ⚠️ ERI                  | Ethical Risk Index                    |
-| 🤖 RAI                  | Responsible AI Index                  |
-| ⚖️ Fairness Score       | Measures fairness-related performance |
-| 🔎 Explainability Score | Measures model explainability         |
-| 🏛️ Governance Score    | Overall governance assessment         |
-
-### 📄 Automated Reporting
-
-The pipeline automatically generates:
-
-* 📊 Metric reports
-* 📈 Graphs
-* 🧠 LLM analysis
-* 💡 Recommendations
-* 📄 PDF Responsible AI report
-* 💾 Final processed dataset
-* 🤖 Trained model
+| Area                   | Capabilities                                                      |
+| ---------------------- | ----------------------------------------------------------------- |
+| 📂 **Dataset**         | CSV loading, validation, summary, target detection                |
+| 🧹 **Preprocessing**   | Missing values, duplicates, encoding, outliers, skewness          |
+| ⚖️ **Imbalance**       | Class distribution analysis, SMOTE, SMOTENC                       |
+| 🧬 **Synthetic Data**  | CTGAN-based tabular data generation                               |
+| 🔍 **Bias & Fairness** | Bias detection, fairness metrics, proxy-bias analysis, mitigation |
+| 🤖 **ML Models**       | Random Forest, Gradient Boosting, Voting models                   |
+| 🔎 **Explainability**  | SHAP, LIME, feature importance, LLM explanations                  |
+| 🧠 **Generative AI**   | Groq-powered analysis and recommendation engine                   |
+| 📈 **RAI Metrics**     | EDQS, ERI, RAI, Fairness, Explainability & Governance             |
+| 📊 **Visualization**   | Bias, fairness, metric and model-performance visualizations       |
+| 📄 **Reporting**       | Automated Responsible AI PDF reports                              |
+| 🖥️ **Dashboard**      | Streamlit-based results visualization                             |
 
 ---
 
-# 🛠️ Tech Stack
+# 🛠️ Technology Stack
 
-## 🐍 Programming
+### 🐍 Core
 
 * Python
 * Pandas
 * NumPy
 
-## 🤖 Machine Learning
+### 🤖 Machine Learning
 
 * Scikit-learn
 * Random Forest
 * Gradient Boosting
 * Imbalanced-learn
 
-## ⚖️ Responsible AI / Fairness
+### ⚖️ Responsible AI
 
 * Fairlearn
 * AIF360
 
-## 🧬 Synthetic Data
+### 🧬 Synthetic Data
 
 * CTGAN
 * SDV
 * Faker
 
-## 🔎 Explainable AI
+### 🔎 Explainable AI
 
 * SHAP
 * LIME
 
-## 🧠 Generative AI
+### 🧠 Generative AI
 
 * LangChain
 * Groq API
-* LLM-powered decision engine
 
-## 📊 Visualization
+### 📊 Visualization
 
 * Matplotlib
 * Seaborn
 * Plotly
 
-## 📄 Reporting
+### 📄 Reporting & Interface
 
 * ReportLab
 * FPDF
-
-## 🖥️ Interface
-
 * Tkinter
 * Streamlit
 
@@ -233,11 +132,11 @@ The pipeline automatically generates:
 Responsible-AI-Pipeline/
 │
 ├── 📄 main.py
-├── 📄 config.py
-├── 📄 requirements.txt
-├── 📄 README.md
-├── 📄 .gitignore
-├── 🔐 .env
+├── ⚙️ config.py
+├── 📦 requirements.txt
+├── 📖 README.md
+├── 🚫 .gitignore
+├── 🔐 .env                    # Local only
 │
 ├── 📦 modules/
 │   │
@@ -321,8 +220,7 @@ Responsible-AI-Pipeline/
 │       ├── piecharts.py
 │       └── rai_graph.py
 │
-└── 📁 outputs/
-    └── Generated files
+└── 📁 outputs/               # Generated locally
 ```
 
 ---
@@ -331,29 +229,19 @@ Responsible-AI-Pipeline/
 
 ## 1️⃣ Clone the Repository
 
+Replace the URL with your GitHub repository:
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-```
-
-Navigate into the project:
-
-```bash
 cd YOUR_REPOSITORY
 ```
 
----
-
-## 2️⃣ Create Virtual Environment
+## 2️⃣ Create a Virtual Environment
 
 ### 🪟 Windows
 
 ```powershell
 python -m venv venv
-```
-
-Activate:
-
-```powershell
 .\venv\Scripts\Activate.ps1
 ```
 
@@ -363,7 +251,7 @@ If PowerShell blocks activation:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Then activate again:
+Then:
 
 ```powershell
 .\venv\Scripts\Activate.ps1
@@ -376,39 +264,30 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
----
-
-# 📦 Install Dependencies
-
-Upgrade pip:
+## 3️⃣ Install Dependencies
 
 ```bash
 python -m pip install --upgrade pip
-```
-
-Install project dependencies:
-
-```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-# 🔐 Environment Variables
+# 🔐 Environment Configuration
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the project root:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
-The project uses `python-dotenv` to load environment variables.
+The application loads environment variables using `python-dotenv`.
 
-### ⚠️ Important
+### 🚨 Security
 
-Never upload your `.env` file to GitHub.
+Never commit secrets to GitHub.
 
-Your `.gitignore` should contain:
+Recommended `.gitignore`:
 
 ```gitignore
 .env
@@ -420,21 +299,25 @@ outputs/
 *.pkl
 ```
 
-🔒 **Never expose API keys, passwords, database credentials, or other secrets in the repository.**
+Check before committing:
+
+```bash
+git status
+```
 
 ---
 
-# ▶️ Running the Project
+# ▶️ Running the Pipeline
 
-After activating the virtual environment and installing dependencies:
+Start the main pipeline:
 
 ```bash
 python main.py
 ```
 
-The application will start the Responsible AI pipeline.
+The application will open the dataset-selection interface.
 
-You can select your CSV dataset through the file-selection interface.
+Select the required `.csv` file and the pipeline will process it automatically.
 
 If the GUI file picker is unavailable, the application can request the dataset path through the terminal.
 
@@ -442,25 +325,19 @@ If the GUI file picker is unavailable, the application can request the dataset p
 
 # 📂 Input Dataset
 
-The main pipeline accepts **CSV datasets**.
+The primary pipeline accepts **CSV tabular datasets**.
 
-Example:
-
-```text
-dataset.csv
-```
-
-The pipeline automatically analyzes the dataset and attempts to detect:
+The system automatically analyzes:
 
 * 🎯 Target column
 * 📊 Task type
-* 🔤 Categorical columns
-* 🔢 Numerical columns
-* ⚖️ Class imbalance
+* 🔤 Categorical features
+* 🔢 Numerical features
+* ⚖️ Class distribution
 * ❌ Missing values
 * 📑 Duplicate records
 
-Supported ML task types:
+### Supported Tasks
 
 ```text
 ✅ Classification
@@ -469,118 +346,88 @@ Supported ML task types:
 
 ---
 
-# 🔄 Pipeline Workflow
+# 🔄 Processing Pipeline
 
-## 1️⃣ Dataset Loading
+## 1. 🔍 Dataset Analysis
 
-The dataset is loaded using Pandas.
+The dataset is loaded and inspected for:
 
-The pipeline collects information including:
-
-* Number of rows
-* Number of columns
-* Column names
+* Shape and structure
 * Data types
-* Dataset statistics
-
----
-
-## 2️⃣ 🔍 Dataset Validation
-
-The validation stage checks:
-
 * Missing values
 * Duplicate records
-* Data types
-* Invalid values
-* Dataset consistency
+* Target column
+* Feature types
 * Class distribution
 
 ---
 
-## 3️⃣ 🧹 Data Preprocessing
+## 2. 🧹 Preprocessing
 
-The preprocessing stage can perform:
+Depending on the dataset, preprocessing may include:
 
 * Missing-value handling
 * Duplicate removal
 * Categorical encoding
-* Outlier handling
+* Outlier processing
 * Skewness correction
-* Feature preprocessing
+* Feature transformation
 
 ---
 
-## 4️⃣ ⚖️ Imbalance Detection
+## 3. ⚖️ Imbalance Handling
 
-The pipeline identifies class imbalance in classification datasets.
+For classification datasets, the system evaluates class distribution and can apply:
 
-It analyzes class distributions and determines whether balancing techniques are required.
+* **SMOTE**
+* **SMOTENC**
 
----
-
-## 5️⃣ 🔄 SMOTE Balancing
-
-For classification datasets, the pipeline can use:
-
-```text
-SMOTE
-```
-
-and where categorical variables require special handling:
-
-```text
-SMOTENC
-```
-
-This helps reduce class imbalance before model training.
+This helps address imbalanced training data.
 
 ---
 
-## 6️⃣ 🧬 CTGAN Synthetic Data
+## 4. 🧬 Synthetic Data Generation
 
-CTGAN can be used to generate synthetic tabular data.
+CTGAN can generate synthetic tabular records based on the input dataset.
 
-The generated data can be compared against the original dataset using visualizations and statistical analysis.
+The pipeline provides comparisons between real and synthetic data through generated visualizations.
 
 ---
 
-## 7️⃣ 🔍 Bias Detection
+## 5. 🔍 Bias & Fairness Analysis
 
-The pipeline analyzes potential bias across relevant attributes.
+The fairness layer evaluates potential disparities across relevant attributes.
 
-It can generate:
+It includes:
 
-* Bias metrics
+* Bias detection
 * Fairness metrics
 * Bias tables
-* Bias visualizations
+* Proxy-bias detection
 * Fairness comparisons
-* Proxy-bias analysis
+* Visualization of bias-related results
 
 ---
 
-## 8️⃣ ⚖️ Fairness Improvement
+## 6. 🛠️ Fairness Mitigation
 
-The pipeline can apply fairness-related processing to improve model outcomes.
-
-The results are compared before and after mitigation.
+Where applicable, fairness-related transformations are applied and the resulting metrics are compared with the original results.
 
 ```text
-Before Fairness Processing
-          ↓
-     Bias Analysis
-          ↓
-   Fairness Mitigation
-          ↓
-After Fairness Processing
+Original Data
+     ↓
+Bias / Fairness Assessment
+     ↓
+Mitigation
+     ↓
+Re-evaluation
 ```
 
 ---
 
-## 9️⃣ 🤖 Model Training
+## 7. 🤖 Model Training
 
-The pipeline trains machine-learning models such as:
+The project supports several ML approaches.
 
 ### 🌲 Random Forest
 
@@ -598,43 +445,56 @@ GradientBoostingRegressor
 
 ### 🗳️ Voting Models
 
-Multiple models can also be combined using voting-based approaches.
+Multiple trained estimators can be combined using voting-based approaches.
 
 ---
 
 # 📊 Model Evaluation
 
-## Classification Metrics
+### Classification
 
-For classification tasks, the pipeline evaluates:
+The pipeline evaluates:
 
-* 🎯 Accuracy
-* 🎯 Precision
-* 🎯 Recall
-* 🎯 F1 Score
+* Accuracy
+* Precision
+* Recall
+* F1 Score
 
-## Regression Metrics
+### Regression
 
-For regression tasks:
+The pipeline evaluates:
 
-* 📉 MAE
-* 📉 MSE
-* 📉 RMSE
-* 📈 R² Score
+* MAE
+* MSE
+* RMSE
+* R²
+
+Model feature importance is also generated where applicable.
 
 ---
 
 # 📈 Responsible AI Metrics
 
-## 📊 EDQS — Ethical Data Quality Score
+The project provides a set of custom metrics to summarize different aspects of the pipeline.
 
-EDQS evaluates dataset quality based on factors such as:
+| Metric                      | Purpose                                |
+| --------------------------- | -------------------------------------- |
+| 📊 **EDQS**                 | Evaluates ethical data quality         |
+| ⚠️ **ERI**                  | Summarizes ethical/model risk          |
+| 🤖 **RAI**                  | Aggregates Responsible AI dimensions   |
+| ⚖️ **Fairness Score**       | Evaluates fairness-related performance |
+| 🔎 **Explainability Score** | Evaluates model interpretability       |
+| 🏛️ **Governance Score**    | Summarizes governance-related factors  |
+
+### 📊 EDQS — Ethical Data Quality Score
+
+EDQS considers data-quality factors such as:
 
 * Missing values
 * Duplicate records
 * Class imbalance
 
-Example weighting configuration:
+Example configuration:
 
 ```python
 EDQS_WEIGHTS = {
@@ -644,92 +504,63 @@ EDQS_WEIGHTS = {
 }
 ```
 
----
+### ⚠️ ERI — Ethical Risk Index
 
-## ⚠️ ERI — Ethical Risk Index
+ERI combines relevant risk factors including fairness, model performance, imbalance and explainability-related information.
 
-ERI provides an aggregated view of ethical/model risk using relevant factors such as:
+### 🤖 RAI — Responsible AI Index
 
-* Fairness
-* Model performance
-* Imbalance
-* Explainability
+RAI provides an aggregated view of Responsible AI characteristics across the processed workflow.
 
----
+### 🔎 Explainability Score
 
-## 🤖 RAI — Responsible AI Index
-
-RAI combines multiple Responsible AI dimensions to provide an overall Responsible AI assessment.
-
-It considers areas such as:
-
-* Data quality
-* Fairness
-* Model performance
-* Ethical risk
-
----
-
-## 🔎 Explainability Score
-
-The Explainability Score evaluates the explainability-related characteristics of the trained model.
-
-The project uses techniques such as:
+Explainability is supported through:
 
 * SHAP
 * LIME
 * Feature importance
+* LLM-generated explanations
 
----
+### 🏛️ Governance Score
 
-## 🏛️ Governance Score
-
-The Governance Score provides an aggregated assessment of important Responsible AI dimensions.
-
-It can be used to summarize:
-
-* Data quality
-* Fairness
-* Risk
-* Explainability
-* Model performance
+The Governance Score summarizes selected Responsible AI dimensions into an overall governance-oriented assessment.
 
 ---
 
 # 🧠 LLM Decision Engine
 
-The project integrates a **Groq-powered LLM Decision Engine**.
+The project integrates a **Groq-powered LLM Decision Engine** to interpret pipeline results.
 
-The LLM analyzes the pipeline results and generates:
+The engine can analyze:
 
 ### 🔍 Analysis
 
-* Dataset quality analysis
-* Bias analysis
-* Fairness analysis
-* Ethical risk analysis
-* Explainability analysis
-* Model performance analysis
+* Dataset quality
+* Bias and fairness
+* Ethical risk
+* Model performance
+* Explainability
+* Responsible AI metrics
 
 ### 💡 Recommendations
 
-The LLM can generate recommendations for improving:
+Based on the analysis, the LLM can generate recommendations related to:
 
 * Data quality
 * Fairness
 * Model performance
 * Explainability
-* Responsible AI metrics
+* Responsible AI improvements
 
 ### 🔄 Optimization
 
-Recommendations can be passed back into the pipeline's optimization workflow.
+Selected recommendations can be incorporated into the iterative optimization workflow.
 
 ---
 
-# ⚡ Optimization Configuration
+# ⚡ Optimization
 
-Important configuration parameters include:
+The pipeline supports iterative improvement using configurable parameters:
 
 ```python
 FAST_MODE = True
@@ -740,47 +571,44 @@ PATIENCE = 2
 MIN_IMPROVEMENT = 0.001
 ```
 
-These parameters control:
-
-* ⚡ Fast execution mode
-* 📊 Train/test split
-* 🎲 Reproducibility
-* 🔁 Maximum optimization iterations
-* ⏹️ Early stopping
-* 📈 Minimum improvement threshold
+| Parameter         | Purpose                       |
+| ----------------- | ----------------------------- |
+| `FAST_MODE`       | Enables faster execution      |
+| `TEST_SIZE`       | Test-set proportion           |
+| `RANDOM_STATE`    | Reproducible results          |
+| `MAX_ITERATIONS`  | Maximum optimization cycles   |
+| `PATIENCE`        | Early stopping                |
+| `MIN_IMPROVEMENT` | Minimum improvement threshold |
 
 ---
 
 # 📊 Visualizations
 
-The pipeline can generate visualizations including:
+The pipeline can generate visualizations for:
 
-* 📊 Before/after comparisons
-* ⚖️ Bias comparisons
-* 🔥 Bias heatmaps
+* 📈 Before/after comparisons
+* ⚖️ Bias and fairness
+* 🔥 Correlation analysis
 * 🕸️ Bias radar charts
-* 📈 EDQS comparison
-* 📈 ERI comparison
-* 📈 RAI comparison
-* ⚖️ Fairness comparison
-* 🔥 Correlation heatmaps
+* 📊 EDQS
+* ⚠️ ERI
+* 🤖 RAI
 * 🌲 Feature importance
 * 🧬 Real vs synthetic CTGAN data
-* 📦 Boxplots
-* 🥧 Pie charts
-* 📊 Class distributions
+* 📦 Distribution and box plots
+* 🥧 Class/category distributions
 
 ---
 
-# 📁 Generated Outputs
+# 📄 Generated Reports & Outputs
 
-Generated files are stored inside:
+Generated artifacts are stored inside:
 
 ```text
 outputs/
 ```
 
-Typical output structure:
+Typical outputs include:
 
 ```text
 outputs/
@@ -811,62 +639,57 @@ outputs/
     └── trained_model.pkl
 ```
 
-The exact generated files depend on the selected dataset and task type.
+> ℹ️ The exact output files depend on the selected dataset and processing path.
 
 ---
 
-# 📄 Automated PDF Report
+# 📄 Responsible AI Report
 
-The pipeline generates a PDF report containing important Responsible AI results.
+The generated PDF report brings the main results together in one document.
 
-The report can include:
+It may contain:
 
-* 📂 Dataset information
-* 📊 Data quality metrics
-* ⚖️ Fairness metrics
-* ⚠️ Ethical Risk Index
-* 🤖 Responsible AI Index
-* 🔎 Explainability Score
-* 🏛️ Governance Score
+* 📂 Dataset summary
+* 📊 Data-quality results
+* ⚖️ Fairness results
+* ⚠️ Ethical risk
+* 🤖 Responsible AI score
+* 🔎 Explainability results
+* 🏛️ Governance assessment
 * 🎯 Model performance
-* 🔍 Bias analysis
-* 🧠 LLM-generated analysis
-* 💡 LLM recommendations
+* 🧠 LLM analysis
+* 💡 Recommendations
 * 📈 Before/after comparisons
 
 ---
 
 # 🖥️ Streamlit Dashboard
 
-A Streamlit dashboard is available at:
+The project also contains a Streamlit dashboard:
 
 ```text
 modules/dashboard/app.py
 ```
 
-Run the dashboard using:
+Run it with:
 
 ```bash
 streamlit run modules/dashboard/app.py
 ```
 
-If the dashboard depends on generated outputs, run the main pipeline first:
+If the dashboard uses generated pipeline results, run:
 
 ```bash
 python main.py
 ```
 
-Then:
-
-```bash
-streamlit run modules/dashboard/app.py
-```
+first.
 
 ---
 
 # ⚙️ Configuration
 
-Project-level configuration is maintained in:
+Project-level settings are maintained in:
 
 ```text
 config.py
@@ -883,11 +706,47 @@ CORRELATION_THRESHOLD = 0.95
 
 ---
 
-# 🔐 Security
+# 🧪 Example Execution
 
-This project uses an API key for LLM functionality.
+```text
+📂 Select Dataset
+      ↓
+🔍 Analyze & Validate
+      ↓
+🧹 Preprocess
+      ↓
+⚖️ Check Imbalance
+      ↓
+🔄 Balance Dataset
+      ↓
+🧬 Generate Synthetic Data
+      ↓
+🔍 Analyze Bias & Fairness
+      ↓
+🛠️ Apply Mitigation
+      ↓
+🤖 Train Models
+      ↓
+📊 Evaluate Performance
+      ↓
+📈 Calculate RAI Metrics
+      ↓
+🧠 Generate LLM Analysis
+      ↓
+💡 Apply Recommendations
+      ↓
+📊 Create Visualizations
+      ↓
+📄 Generate Report
+```
 
-### ❌ Never commit:
+---
+
+# 🔐 Security & Best Practices
+
+Before pushing the project to GitHub:
+
+### ❌ Do not commit
 
 ```text
 .env
@@ -895,142 +754,89 @@ API keys
 Passwords
 Database credentials
 Private certificates
-Secret tokens
+Session tokens
+Local virtual environments
+Generated model files containing sensitive data
 ```
 
-### ✅ Before committing:
+### ✅ Verify your repository
 
 ```bash
 git status
-```
-
-Check that `.env` is not included.
-
-You can also verify tracked files:
-
-```bash
 git ls-files
 ```
 
-If an API key has accidentally been pushed to GitHub, **immediately revoke/rotate the key** and remove the secret from Git history.
+If a secret is accidentally exposed:
+
+1. 🔴 Revoke/rotate the credential immediately.
+2. 🧹 Remove it from the repository.
+3. 🔄 Update the application with a new credential.
+4. 🛡️ Review Git history if the secret was previously committed.
 
 ---
 
-# 🧪 Example Workflow
+# 📌 Responsible AI Disclaimer
 
-```text
-📂 Select CSV Dataset
-        ↓
-🔍 Validate Dataset
-        ↓
-🧹 Clean & Preprocess
-        ↓
-⚖️ Detect Imbalance
-        ↓
-🔄 Apply SMOTE / SMOTENC
-        ↓
-🧬 Generate Synthetic Data
-        ↓
-🔍 Detect Bias
-        ↓
-⚖️ Apply Fairness Improvements
-        ↓
-🤖 Train ML Models
-        ↓
-📊 Evaluate Models
-        ↓
-🔎 Calculate Explainability
-        ↓
-📈 Calculate EDQS / ERI / RAI
-        ↓
-🏛️ Calculate Governance Score
-        ↓
-🧠 LLM Analysis
-        ↓
-💡 Generate Recommendations
-        ↓
-🔄 Optimize Pipeline
-        ↓
-📊 Generate Visualizations
-        ↓
-📄 Generate PDF Report
-        ↓
-💾 Save Final Dataset & Model
-```
+This project is intended as an **engineering and research framework** for evaluating Responsible AI characteristics in machine-learning workflows.
+
+The generated metrics and LLM recommendations are **decision-support outputs** and should not be treated as definitive assessments.
+
+Results can vary depending on:
+
+* Dataset composition
+* Target definition
+* Feature selection
+* Protected attributes
+* Sampling strategy
+* Model architecture
+* Evaluation metrics
+* Preprocessing decisions
+* Fairness definitions
+
+Human review and domain-specific evaluation remain important when interpreting the results.
 
 ---
 
-# 📌 Responsible AI Considerations
-
-This project is designed as an engineering and research framework for analyzing Responsible AI characteristics in tabular machine-learning workflows.
-
-The generated scores and recommendations should be treated as **decision-support outputs** rather than absolute judgments.
-
-Responsible AI results can depend on:
-
-* 📂 Dataset characteristics
-* 🎯 Target definition
-* ⚖️ Protected attributes
-* 📊 Sampling strategy
-* 🤖 Model selection
-* 📈 Evaluation metrics
-* ⚙️ Thresholds
-* 🧹 Preprocessing techniques
-
-Therefore, Responsible AI results should be interpreted within the context of the specific dataset and application.
-
----
-
-# 🚀 Future Improvements
-
-Possible future enhancements include:
+# 🚀 Future Enhancements
 
 * 🌐 Web-based dataset upload
 * 📊 Interactive Responsible AI dashboard
 * 🔐 Authentication and role-based access
-* 🧠 More LLM providers
-* ⚖️ Additional fairness algorithms
-* 🤖 More machine-learning models
+* 🧠 Additional LLM providers
+* ⚖️ More fairness mitigation algorithms
+* 🤖 Additional ML models
 * 🔎 Interactive SHAP visualizations
 * 📋 Automated Model Cards
-* 🏛️ AI Governance audit trails
-* 📦 Docker deployment
+* 🏛️ AI governance audit trails
+* 📦 Docker support
 * ☁️ Cloud deployment
 * 🔄 Experiment tracking
-* 📡 REST API for pipeline execution
+* 📡 REST API
 * 📊 Dataset versioning
-* 📝 Automated compliance reports
+* 📝 Automated compliance reporting
 
 ---
 
-# 🧑‍💻 Author
-
-## Shahwaz Azam
-
-🎓 B.Tech — Computer Science & Engineering (Data Science)
-
-💡 Interested in:
+### 💡 Areas of Interest
 
 * 🤖 Artificial Intelligence
 * 🧠 Generative AI
 * 🔎 Responsible AI
-* 💻 Full Stack Development
 * 📊 Machine Learning
+* 💻 Full Stack Development
 * 🔗 RAG Systems
 
 ---
 
-# ⭐ Support
+# ⭐ Contributing
 
-If you find this project useful:
+Contributions, suggestions, and improvements are welcome.
 
-⭐ **Star the repository**
+```text
+🍴 Fork → 🛠️ Modify → 📤 Pull Request
+```
 
-🍴 **Fork the repository**
-
-🐛 **Open an issue**
-
-💡 **Suggest improvements**
+For bugs or feature requests, open a GitHub issue.
 
 ---
 
@@ -1038,35 +844,35 @@ If you find this project useful:
 
 This project is currently intended for **educational, research, and portfolio purposes**.
 
-If you plan to distribute or use this project commercially, add an appropriate open-source license such as **MIT License**.
+If you plan to distribute or use the project commercially, add an appropriate open-source license such as the **MIT License**.
 
 ---
 
-## 🚀 Quick Start
+# 🚀 Quick Start
 
 ```bash
-# Clone
+# 1. Clone
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 
-# Enter project
+# 2. Enter project
 cd YOUR_REPOSITORY
 
-# Create environment
+# 3. Create virtual environment
 python -m venv venv
 
-# Activate - Windows
+# 4. Activate - Windows
 .\venv\Scripts\Activate.ps1
 
-# Install dependencies
+# 5. Install dependencies
 pip install -r requirements.txt
 
-# Configure API key
-# Create .env and add GROQ_API_KEY
+# 6. Create .env
+# GROQ_API_KEY=your_groq_api_key_here
 
-# Run pipeline
+# 7. Run pipeline
 python main.py
 
-# Optional: Run dashboard
+# 8. Optional dashboard
 streamlit run modules/dashboard/app.py
 ```
 
